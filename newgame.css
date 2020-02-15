@@ -1,0 +1,70 @@
+.heading{
+    font-family: 'Liu Jian Mao Cao', cursive;
+    text-align: center;
+    font-size: 3em;
+}
+.image1{
+    float: right;
+}
+.image2{
+    float: left;
+}
+.rules{
+    font-family: 'Yeon Sung', cursive;
+    color: white;
+    margin:120px 0px 0px 50px;
+}
+.uli{    
+    margin:14px 0px 0px 32px;   
+}
+.round {
+    border-radius: 50%;
+    /* background:rgb(58, 241, 211); */
+    /*margin: 34px 0px 0px -151px;*/
+    padding: 20px;
+    width: 90px;
+    height: 90px;
+    font-size: 85px;
+    font-family: 'Lobster', cursive;
+    cursor: pointer;
+}
+.roundlast {
+    color:grey;
+    border-radius: 50%;
+    background: gray;
+    padding: 20px;
+    width: 90px;
+    height: 90px;
+    font-size: 50px;
+    /* color: gray; */
+}
+.kickk{
+    width:360px;
+    overflow: hidden;
+    margin:158px 0px 0px 9px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+/* tableclass{
+    margin:55px 0px 0px 0px;
+    padding: ;
+} */
+.restart{
+    font-family: 'Sunshiney', cursive;
+    font-size: 2em;
+    background-color: rgb(13, 114, 117);
+    margin: 10px 0px 0px 708px;
+
+}
+.rules2{
+    margin-top: 90px;
+    margin-left: 126px;
+    font-family: 'Yeon Sung', cursive;
+    color: white;
+    
+}

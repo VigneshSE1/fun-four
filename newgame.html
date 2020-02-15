@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>NEWGame</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="newgame.css">
+    <link href="https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sunshiney&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12" style="height: 75px; background-color: rgb(15, 55, 100);">
+                <div class="row" style="height: 75px;">
+                    <div class="col-xl-3 image1" style="height: 75px; ">
+
+                    </div>
+                    <div class="col-xl-6" style="height: 75px; color:white">
+                        <h1 class="heading">GUESS THE NUMBER</h1>
+                    </div>
+                    <div class="col-xl-3 image2" style="height: 75px;">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xl-3" style="height: 570px; background-color: rgba(6, 7, 59, 0.719);">
+                <div class="row">
+                    <h2 class="rules">INSTRUCTIONS: </h2>
+                </div>
+                <div class="row">
+                    <ul class="uli" style="color: white;">
+                        <li>
+                            <h4 style="color: red;">RED</h4>Wrong guess
+                        </li>
+                        <li>
+                            <h4 style="color: yellow;">YELLOW</h4>Correct guess but wrong location
+                        </li>
+                        <li>
+                            <h4 style="color: green;">GREEN</h4>correct guess
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <div class="col-xl-6" style="height:570px;">
+                <div class="row">
+                    <div class="col-xl-3">
+                        <img src="wallpaper.jpg" alt="" height="570px" width="790px"
+                            style="margin-left: -15px; overflow:hidden;">
+                    </div>
+                    <div class="col-xl-6">
+                        <table style="margin-top:50px;">
+                            <tr>
+                                <td><input type="number" class="round" oninput="myFunction()" id=1></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=2></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=3></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=4></td>
+
+                            </tr>
+                            <tr>
+                                <td><input type="number" class="round" oninput="myFunction()" id=5></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=6></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=7></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=8></td>
+
+                            </tr>
+                            <tr>
+                                <td><input type="number" class="round" oninput="myFunction()" id=9></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=10></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=11></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=12></td>
+
+                            </tr>
+                            <tr>
+                                <td><input type="number" class="round" oninput="myFunction()" id=13></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=14></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=15></td>
+                                <td><input type="number" class="round" oninput="myFunction()" id=16></td>
+
+                            </tr>
+
+                            <tr>
+                                <td><input type="number" class="roundlast" id=17></td>
+                                <td><input type="number" class="roundlast" id=18></td>
+                                <td><input type="number" class="roundlast" id=19></td>
+                                <td><input type="number" class="roundlast" id=20></td>
+
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xl-3">
+
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="col-xl-3" style="height: 570px; background-color:rgba(6, 7, 59, 0.719);">
+                <!--<img class="kickk" src="kick.jpg">-->
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-12" style="height: 75px; background-color: rgb(15, 55, 100);">
+
+                <button class="restart" onclick="newgame()">Try again</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        var score = 0;
+        var attempt = 0;
+        var ele1 = false;
+        var ele2 = false;
+        var ele3 = false;
+        var ele4 = false;
+
+        function shuffleArray(array) {
+            for (var i = array.length - 1; i > 1; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            return array;
+        }
+
+        var rNum = shuffleArray(numbers).slice(0, 4);
+        console.log(rNum);
+
+        document.getElementById(17).value = rNum[0];
+        document.getElementById(18).value = rNum[1];
+        document.getElementById(19).value = rNum[2];
+        document.getElementById(20).value = rNum[3];
+
+
+        function myFunction() {
+            attempt++;
+
+            for (var i = 1; i <= 16; i++) {
+                var x1 = document.getElementById(i).value;
+                var x2 = document.getElementById(i)
+                if (x1 == rNum[0] || x1 == rNum[1] || x1 == rNum[2] || x1 == rNum[3]) {
+                    if (x1 == rNum[0]) {
+                        if (i == 1 || i == 5 || i == 9 || i == 13) {
+
+                            x2.style.backgroundColor = 'green';
+                            ele1 = true;
+
+
+
+                        } else {
+                            x2.style.backgroundColor = 'yellow'
+                        }
+                    }
+                    if (x1 == rNum[1]) {
+                        if (i == 2 || i == 6 || i == 10 || i == 14) {
+                            x2.style.backgroundColor = 'green';
+                            ele2 = true;
+
+
+                        } else {
+                            x2.style.backgroundColor = 'yellow'
+                        }
+                    }
+                    if (x1 == rNum[2]) {
+                        if (i == 3 || i == 7 || i == 11 || i == 15) {
+                            x2.style.backgroundColor = 'green'
+                            ele3 = true;
+
+
+                        } else {
+                            x2.style.backgroundColor = 'yellow'
+                        }
+                    }
+                    if (x1 == rNum[3]) {
+                        if (i == 4 || i == 8 || i == 12 || i == 16) {
+                            x2.style.backgroundColor = 'green'
+                            ele4 = true;
+
+
+                        } else {
+                            x2.style.backgroundColor = 'yellow'
+                        }
+                    }
+
+                } else if (x1 == "") {
+                    x2.style.backgroundColor = 'grey'
+                } else {
+                    x2.style.backgroundColor = 'red'
+                }
+            }
+
+            if (ele1 && ele2 && ele3 && ele4) {
+                alert("win");
+                window.location.reload();
+
+            }
+            if (attempt == 16) {
+                alert("you loose");
+                alert("The Correct Numbers are" + "  " + rNum[0] + "  " + rNum[1] + "  " + rNum[2] + "  " + rNum[3])
+                window.location.reload();
+            }
+        }
+        function newgame() {
+            window.location.reload();
+        }
+    </script>
+</body>
+
+</html>
